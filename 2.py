@@ -1,10 +1,11 @@
-k=open('c:/ndkm.py','r')
-char,wc,lc=0,0,0
-for line in k:
-    for k in range(0,len(line)):
-        char +=1
-        if(line[k]==' '):
-            wc+=1
-        if(line[k]=='\n'):
-            wc,lc = wc+1,lc+1
-print("The no.of chars is %d\n The no.of words is %d\n The no.of lines is %c"%(char,wc,lc))
+import turtle, random
+colors =["red","green","blue","orange","pink","yellow"]
+painter = turtle.Turtle()
+painter.pensize(3)
+for i in range(10):
+    color = random.choice(colors)
+    painter.pencolor(color)
+    painter.circle(100)
+    painter.right(30)
+    painter.left(60)
+    painter.setposition(0, 0)

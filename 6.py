@@ -1,18 +1,29 @@
-import sys
-import os
-def file_read_from_tail(fname,linnes):
-    bufsize = 8192
-    fsize = os.stat(fname).st_size
-    iter = 0
-    with open(fname) as f:
-        if bufsize > fsize:
-            bufsize = fsize-1
-            data = []
-            white True:
-                iter +=1
-                f.seek(fsize-bufsize*iter)
-                data.extend(f.readlines())
-                if len(data) >= lines or f.tell() == 0:
-                    print(''.join(data[-lines:]))
-                    break
-file_read_from_tail('C/ndkm.py',2)
+from tkinter import *
+
+def NewFile():
+    print("New File!")
+def About():
+    print("This is a simple example of a menu")
+def OpenFile():
+    print("Open File")
+def Exit():
+    print("Exit")
+def Instext():
+    print("Instext")
+def Inspic():
+    print("Inspic")
+root = Tk()
+menu = Menu(root)
+root.config(menu=menu)
+filemenu = Menu(menu)
+menu.add_cascade(label="File", menu=filemenu)
+filemenu.add_command(label="New",command=NewFile)
+filemenu.add_command(label="Open",command=OpenFile)
+filemenu.add_separator()
+filemenu.add_command(label="Exit",command=Exit)
+
+
+filemenu = Menu(menu)
+menu.add_cascade(label="Insert", menu=filemenu)
+filemenu.add_command(label="Text",command=Instext)
+filemenu.add_command(label="Picture",command=Inspic)
